@@ -59,7 +59,7 @@ df = df[(df[col].notnull) & (df[col] != "")]
 
 ## 填充空值
 df.fillna()
-
+删除含有空值的行
 df.dropna()
 
 df.fillna()

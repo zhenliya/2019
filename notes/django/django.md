@@ -27,3 +27,13 @@ django.contrib.sessions -- 会话框架。
 django.contrib.messages -- 消息框架。
 django.contrib.staticfiles -- 管理静态文件的框架。
 默认开启的某些应用需要至少一个数据表，所以，在使用他们之前需要在数据库中创建一些表。
+
+# django序列化queryset
+```python
+from django.core import serializers
+json_data = serializers.serialize("json", queryset)
+serializer = serializers.serialize("json", queryset.values)
+json_data = json.loads(serializer)
+# print(json_data)
+return HttpResponse(json_data, content_type="application/json")
+```
