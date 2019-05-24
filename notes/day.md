@@ -1,25 +1,3 @@
-# plt 子图
-```python
-plt.figure(figsize=(9.6, 7.2))
-# 指定子图的行， 列，位置
-plt.subplot(1, 2, 1)
-plt.title = '测试集'
-plt.plot(range(len(y_pred)), y_pred, 'b', label="预测")
-plt.plot(range(len(y_pred)), Y_test, 'r', label="测试验证")
-
-plt.xlabel('销量数量', fontproperties=self.font_set)
-plt.ylabel('销量(十亿元)', fontproperties=self.font_set)
-
-plt.subplot(1, 2, 2)
-plt.title = '训练集自测'
-plt.plot(range(len(y_pred2)), y_pred2, 'b', label="预测")
-plt.plot(range(len(y_pred2)), Y_train, 'r', label="测试验证")
-
-plt.suptitle('人口G多元回归')
-plt.savefig('./pictures/ridge_mult_predict.png')
-plt.show()
-
-```
 
 # 奇异矩阵
 该矩阵的秩不是满秩的， 对应行列式等于0的方阵

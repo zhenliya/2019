@@ -688,3 +688,26 @@ add_transparency("red",0.5)
 df <- read.csv('the intensity of measured markers.csv',encoding='gb18030')
 
 ```
+# 字符串处理
+https://www.cnblogs.com/awishfullyway/p/6601539.html
+nchar() 获取字符串长度
+paste() 将字符串连接
+strsplit() 将字符串分割
+substr() 对给定字符串取子串
+gsub() 负责搜索字符串的特定表达式，并用新的内容加以替代。sub()函数是类似的，但只替代第一个发现结果。
+grep() 负责搜索给定字符串对象中特定表达式 ，并返回其位置索引。grepl()函数与之类似，但其后面的"l"则意味着返回的将是逻辑值。
+字符串分割函数：strsplit()
+字符串连接函数：paste()及paste0()
+计算字符串长度：nchar()及length()
+字符串截取函数：substr()及substring()
+字符串替换函数：chartr()、sub()及gsub()
+字符串匹配函数：grep()及grepl()
+大小写转换函数：toupper()、tolower()及casefold()
+字符(串)的格式化(定制)输出函数：sprintf()、sink()、cat()、print()、strtrim()、strwrap()
+
+# 调色盘
+获取调色盘
+display.brewer.all()
+
+pheatmap(mat, color = colorRampPalette(rev(brewer.pal(n = 7, name =
+  "RdYlBu")))(100)
