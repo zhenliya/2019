@@ -710,4 +710,4 @@ grep() 负责搜索给定字符串对象中特定表达式 ，并返回其位置
 display.brewer.all()
 
 pheatmap(mat, color = colorRampPalette(rev(brewer.pal(n = 7, name =
-  "RdYlBu")))(100)
+  "Spectral")))(100)
