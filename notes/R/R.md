@@ -252,7 +252,8 @@ download.file(paste0(url, "/", fcs_zip), destfile = fcs_zip, mode = "wb")
 ```
 
 ## 读取FCS文件为flowSet
-### flowFrame
+
+### flowFrame创建
 flowFrame-class{flowCore}
 'flowFrame'：用于存储来自FACS运行的细胞群的观察到的定量特性的类
 此类表示FCS文件或类似数据结构中包含的数据。数据包含三个部分：
@@ -711,3 +712,27 @@ display.brewer.all()
 
 pheatmap(mat, color = colorRampPalette(rev(brewer.pal(n = 7, name =
   "Spectral")))(100)
+
+# 读取xlsx文件
+```R
+library(readxl) 
+url <- "http://imlspenticton.uzh.ch/robinson_lab/cytofWorkflow"
+md <- "PBMC8_metadata.xlsx" 
+download.file(file.path(url, md), destfile = md, mode = "wb") 
+md <- read_excel(md) 
+head(data.frame(md))
+```
+```R
+# 导入flowset
+library(HDCytoData) 
+fs <- Bodenmiller_BCR_XL_flowSet()
+
+```
+相当于调用flowCore的 read.flowSet(),和自带的read.FCS, 默认有可能改变marker intensities 和移除细胞特别大的值。可以通过transformation 和runcate_max_
+range修改
+
+# 缩放数据
+range01 <- function(x){(x - min(x)) / (max(x) - min(x))}
+mtf <- range01(T_fs@exprs[,1:35])
+# 清除当前环境中的变量
+rm(list=ls())
