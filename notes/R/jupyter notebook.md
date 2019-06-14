@@ -2,7 +2,7 @@
 1. 安装IRkernel
 ```R
 install.packages("devtools")
-devtools::install_gethub("IRkernel/IRkernel")
+devtools::install_github("IRkernel/IRkernel")
 IRkernel::installspec()
 ```
 2. 使用ryp2 python包在R-py之间切换 
@@ -19,3 +19,10 @@ pipinstall ryp2
 # 从python获取变量
 %R -i var
 ```
+
+# 修改默认路径
+windows中生成配置文件
+jupyter notebook --generate-config
+
+修改配置文件中
+c.NotebookApp.notebook_dir为指定目录
